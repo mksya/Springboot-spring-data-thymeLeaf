@@ -31,7 +31,7 @@
 				<td th:text="${p.designation}"></td>
 				<td th:text="${p.prix}"></td>
 				<td th:text="${p.quantite}"></td>
-				<td><a th:href="@{delete(id=${p.id},page=${pageCourante},size=${size},motCle=${motCle})}">Delete</a></td>
+				<td><a onclick="return confirm('Etes-vous sûr?')" th:href="@{delete(id=${p.id},page=${pageCourante},size=${size},motCle=${motCle})}">Delete</a></td>
 			</tr>
 		</tbody>
 	</table>
