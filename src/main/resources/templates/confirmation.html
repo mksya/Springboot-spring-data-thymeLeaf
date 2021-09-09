@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="layout">
 <head>
 <meta charset="utf-8"/>
 <title>Produits</title>
@@ -9,6 +11,7 @@
 	/>
 </head>
 <body>
+<div layout:fragment="content">
 	<div class="container">
 		<div class="panel panel-default">
 			<div class="panel-heading">Confirmation</div>
@@ -33,5 +36,6 @@
 			</div>
 		</div>
 	</div>
+</div>	
 </body>
 </html>

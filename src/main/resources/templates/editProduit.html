@@ -22,9 +22,9 @@ layout:decorator="layout">
 			<div class="panel-body">
 				<form th:action="@{save}" method="post">
 					<div class="form-group">
-						<label class="control-label">Désignation :</label>
+						<label class="control-label">ID:</label>
 						<input class="form-control" type="text" name="designation" th:value="${produit.designation}"/>
-						<span class="red" th:errors="${produit.designation}"></span>
+						<span class="red" th:errors="${produit.id}"></span>
 					</div>
 				</form>
 				<form th:action="@{save}" method="post">

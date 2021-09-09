@@ -1,6 +1,7 @@
 package org.mksya.web;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -52,6 +53,13 @@ public class ProduitController {
 	public String formProduit(Model model) {
 		model.addAttribute("produit",new Produit());
 		return "formProduit";
+	}
+	
+	@RequestMapping(value="/edit",method={RequestMethod.GET,RequestMethod.POST})
+	public String editProduit(Model model,Long id) {
+		Optional<Produit> p=produitRepository.findById(id);
+		model.addAttribute("produit",p);
+		return "editProduit";
 	}
 	
 	@RequestMapping(value="/save",method={RequestMethod.GET,RequestMethod.POST})

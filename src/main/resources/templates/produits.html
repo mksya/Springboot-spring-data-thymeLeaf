@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="layout">
 <head>
 <meta charset="utf-8"/>
 <title>Produits</title>
@@ -9,7 +11,7 @@
 	/>
 </head>
 <body>
-<p></p>
+<div layout:fragment="content">
 	<div class="container">
 		<form th:action="@{index}" method="get">
 			<label>Mot Clé : </label>
@@ -31,6 +33,7 @@
 				<td th:text="${p.designation}"></td>
 				<td th:text="${p.prix}"></td>
 				<td th:text="${p.quantite}"></td>
+				<td><a th:href="@{edit(id=${p.id})}">Edit</a></td>
 				<td><a onclick="return confirm('Etes-vous sûr?')" th:href="@{delete(id=${p.id},page=${pageCourante},size=${size},motCle=${motCle})}">Delete</a></td>
 			</tr>
 		</tbody>
@@ -43,5 +46,6 @@
 			</li>
 		</ul>
 	</div>
+</div>
 </body>
 </html>
